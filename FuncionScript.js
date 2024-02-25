@@ -42,21 +42,22 @@ function searchBooks() {
     });
 }
 
-function searchBooks2() {
+function searchBooksUnam() {
     const searchInput = document.getElementById('searchInput');
     const searchTerm = searchInput.value.toLowerCase();
     
-    fetch('Libros.csv')
+    fetch('LibrosUNAM.csv')
     .then(response => response.text())
     .then(data => {
         const books = data.split('\n').map(line => line.split(','));
         const filteredBooks = books.filter(book => {
-            const bookInfo = book.join(' ').toLowerCase(); // Concatenar la información del libro en una sola cadena
-            return bookInfo.includes(searchTerm); // Verificar si la cadena contiene el término de búsqueda
+            const bookInfo = book.join(' ').toLowerCase();
+            return bookInfo.includes(searchTerm);
         });
         displayBooks(filteredBooks, 'listaLibrosUNAM');
     });
 }
+
 
 loadBooks();
 
