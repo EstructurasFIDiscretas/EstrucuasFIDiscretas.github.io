@@ -54,11 +54,9 @@ function searchBooksUnam() {
             const bookInfo = book.join(' ').toLowerCase();
             return bookInfo.includes(searchTermUnam);
         });
-        displayBooks(filteredBooks, 'listaLibrosUNAM');
+        displayBooksUnam(filteredBooks, 'listaLibrosUNAM');
     });
 }
-
-
 
 loadBooks();
 
