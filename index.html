@@ -209,35 +209,36 @@
 
     
     <div id="libros_unam" class="content libros" style="display:none;">
-        <h2>Libros UNAM</h2>
-        <input type="text" id="searchInputUnam" placeholder="Buscar por tema" oninput="searchBooksUnam()">
-        <div class="libro-Unam">
-            <div class="map-container">
-                <div class="mapa">
-                    <h3>Ubicacion de la Facultad de Ciencias</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.0381487942695!2d-99.18122957022703!3d19.32415083357854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000fdd96288f%3A0x1096af9b5b03d38d!2sFacultad+de+Ciencias+UNAM!5e0!3m2!1ses-419!2smx!4v1506106789228" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-                <div class="mapa">
-                    <h3>Ubicación de la Facultad de quimica</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2174.857588309033!2d-99.18238305349321!3d19.33285690372357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce00030af12503%3A0xeea91fc2a1d42bcf!2sBiblioteca%20de%20Estudios%20Profesionales%2C%20Facultad%20de%20Qu%C3%ADmica%2C%20UNAM!5e0!3m2!1ses-419!2smx!4v1708819195445!5m2!1ses-419!2smx" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-                <div class="mapa">
-                    <h3>Ubicación de la Facultad de Economia</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1882.40860541622!2d-99.18573471121084!3d19.33373652643188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000223225c11%3A0x76f00e577d9399cb!2sBiblioteca%20Enrique%20Gonz%C3%A1lez%20Aparicio!5e0!3m2!1ses-419!2smx!4v1708819420931!5m2!1ses-419!2smx" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-                <div class="mapa">
-                    <h3>Ubicación del instituto de matematicas</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d665.5648292228!2d-99.17901797235959!3d19.32566602847858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce001aa96dc053%3A0xe0f4a857e3de1b70!2sBiblioteca%20Mtro.%20Sotero%20Prieto!5e0!3m2!1ses-419!2smx!4v1708819358029!5m2!1ses-419!2smx" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
+    <h2>Libros UNAM</h2>
+    <div class="libro-Unam">
+        <div class="map-container">
+            <div class="mapa">
+                <h3>Ubicación de la Facultad de Ciencias</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.0381487942695!2d-99.18122957022703!3d19.32415083357854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000fdd96288f%3A0x1096af9b5b03d38d!2sFacultad+de+Ciencias+UNAM!5e0!3m2!1ses-419!2smx!4v1506106789228" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
-            <div class="infoUnam">
-                <h3>Información del libro</h3>
-                <h2>(Autor, Fecha, Titulo, Editorial, Lugar)</h2>
-                <ol id="listaLibrosUNAM" class="content-text alternating-colors"></ol>
-                <button class="edit-btn" onclick="checkAndLoadContentForEdit('libros_unam')">Editar</button>
-            </div>    
+            <div class="mapa">
+                <h3>Ubicación de la Facultad de Química</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2174.857588309033!2d-99.18238305349321!3d19.33285690372357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce00030af12503%3A0xeea91fc2a1d42bcf!2sBiblioteca%20de%20Estudios%20Profesionales%2C%20Facultad%20de%20Qu%C3%ADmica%2C%20UNAM!5e0!3m2!1ses-419!2smx!4v1708819195445!5m2!1ses-419!2smx" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <div class="mapa">
+                <h3>Ubicación de la Facultad de Economía</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1882.40860541622!2d-99.18573471121084!3d19.33373652643188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000223225c11%3A0x76f00e577d9399cb!2sBiblioteca%20Enrique%20Gonz%C3%A1lez%20Aparicio!5e0!3m2!1ses-419!2smx!4v1708819420931!5m2!1ses-419!2smx" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <div class="mapa">
+                <h3>Ubicación del Instituto de Matemáticas</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d665.5648292228!2d-99.17901797235959!3d19.32566602847858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce001aa96dc053%3A0xe0f4a857e3de1b70!2sBiblioteca%20Mtro.%20Sotero%20Prieto!5e0!3m2!1ses-419!2smx!4v1708819358029!5m2!1ses-419!2smx" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
         </div>
+        <div class="infoUnam">
+            <h3>Información del libro</h3>
+            <h2>(Autor, Fecha, Titulo, Editorial, Lugar)</h2>
+            <input type="text" id="searchInputUnam" placeholder="Buscar por tema" oninput="searchBooksUnam()">
+            <ol id="listaLibrosUNAM" class="content-text alternating-colors"></ol>
+            <button class="edit-btn" onclick="checkAndLoadContentForEdit('libros_unam')">Editar</button>
+        </div>    
     </div>
+</div>
+
     
     <div id="materiales" class="content materiales" style="display:none;">
         <h2>Material Electrónico</h2>
