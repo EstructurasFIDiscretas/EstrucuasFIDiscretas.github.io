@@ -43,8 +43,8 @@ function searchBooks() {
 }
 
 function searchBooksUnam() {
-    const searchInput = document.getElementById('searchInput');
-    const searchTerm = searchInput.value.toLowerCase();
+    const searchInputUnam = document.getElementById('searchInputUnam');
+    const searchTermUnam = searchInputUnam.value.toLowerCase();
     
     fetch('LibrosUNAM.csv')
     .then(response => response.text())
@@ -52,11 +52,12 @@ function searchBooksUnam() {
         const books = data.split('\n').map(line => line.split(','));
         const filteredBooks = books.filter(book => {
             const bookInfo = book.join(' ').toLowerCase();
-            return bookInfo.includes(searchTerm);
+            return bookInfo.includes(searchTermUnam);
         });
         displayBooks(filteredBooks, 'listaLibrosUNAM');
     });
 }
+
 
 
 loadBooks();
