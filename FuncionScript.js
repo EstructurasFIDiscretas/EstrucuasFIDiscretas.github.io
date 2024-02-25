@@ -56,6 +56,9 @@ function searchBooksUnam() {
             return bookInfo.includes(searchTermUnam);
         });
         displayBooksUnam(filteredBooks, 'listaLibrosUNAM');
+    })
+    .catch(error => {
+        console.error('Error fetching UNAM books:', error);
     });
 }
 
