@@ -1,3 +1,12 @@
+function loadBooksUnam() {
+    fetch('LibrosUNAM.csv')
+    .then(response => response.text())
+    .then(data => {
+        const books = data.split('\n').map(line => line.split(','));
+        displayBooks(books, 'listaLibrosUNAM');
+    });
+}
+
 function loadBooks() {
     fetch('Libros.csv')
     .then(response => response.text())
@@ -7,21 +16,6 @@ function loadBooks() {
     });
 }
 
-    function loadBooksUnam() {
-        fetch('LibrosUNAM.csv')
-        .then(response => response.text())
-        .then(data => {
-            const books = data.split('\n').map(line => line.split(','));
-            const listaLibros = document.getElementById('listaLibrosUNAM');
-            listaLibros.innerHTML = '';
-            for (let i = 0; i < 6; i++) {
-                const li = document.createElement('li');
-                li.textContent = `${books[i][0]} ${books[i][1]} ${books[i][2]} ${books[i][3]} ${books[i][4]}`;
-                listaLibros.appendChild(li);
-            }
-        });
-    }
-loadBooksUnam();
 function displayBooks(books, listId) {
     const listaLibros = document.getElementById(listId);
     listaLibros.innerHTML = '';
@@ -36,7 +30,7 @@ function searchBooks() {
     const searchInput = document.getElementById('searchInput');
     const searchTerm = searchInput.value.toLowerCase();
     
-    fetch('LibrosUNAM.csv')
+    fetch('Libros.csv')
     .then(response => response.text())
     .then(data => {
         const books = data.split('\n').map(line => line.split(','));
@@ -50,18 +44,22 @@ function searchBooks() {
 
 
 function searchBooksUnam() {
-    const input = document.getElementById('searchInputUnam').value.toLowerCase();
-    const libros = document.querySelectorAll('#listaLibrosUNAM li');
-    libros.forEach(libro => {
-        const text = libro.textContent.toLowerCase();
-        if (text.includes(input)) {
-            libro.style.display = 'block';
-        } else {
-            libro.style.display = 'none';
-        }
+    const searchInputUnam = document.getElementById('searchInputUnam');
+    const searchTermUnam = searchInputUnam.value.toLowerCase();
+    
+    fetch('LibrosUNAM.csv')
+    .then(response => response.text())
+    .then(data => {
+        const books = data.split('\n').map(line => line.split(','));
+        const filteredBooks = books.filter(book => {
+            const bookInfo = book.join(' ').toLowerCase();
+            return bookInfo.includes(searchTermUnam);
+        });
+        displayBooksUnam(filteredBooks, 'listaLibrosUNAM');
     });
 }
 
+loadBooksUnam();
 loadBooks();
 
 
