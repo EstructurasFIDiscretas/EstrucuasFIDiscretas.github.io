@@ -34,7 +34,7 @@ function searchBooks() {
     .then(response => response.text())
     .then(data => {
         const books = data.split('\n').map(line => line.split(','));
-        const filteredBooks = books.filter(book => book[6].toLowerCase().includes(searchTerm));
+        const filteredBooks = books.filter(book => book[5].toLowerCase().includes(searchTerm));
         displayBooks(filteredBooks, 'listaLibros');
     });
 }
