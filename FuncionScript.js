@@ -54,7 +54,7 @@ function searchBooks2() {
             const bookInfo = book.join(' ').toLowerCase(); // Concatenar la información del libro en una sola cadena
             return bookInfo.includes(searchTerm); // Verificar si la cadena contiene el término de búsqueda
         });
-        displayBooks(filteredBooks, 'listaLibros');
+        displayBooks(filteredBooks, 'listaLibrosUNAM');
     });
 }
 
