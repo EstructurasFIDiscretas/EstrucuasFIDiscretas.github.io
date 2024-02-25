@@ -25,6 +25,15 @@ function displayBooks(books, listId) {
         listaLibros.appendChild(li);
     });
 }
+function displayBooksUnam(books, listId) {
+    const listaLibros = document.getElementById(listId);
+    listaLibros.innerHTML = '';
+    books.slice(0, 6).forEach(book => { // Mostrar solo los primeros 6 libros
+        const li = document.createElement('li');
+        li.textContent = `${book[0]} ${book[1]} ${book[2]} ${book[3]} ${book[4]} ${book[5]}`; // Mostrar solo los primeros 6 elementos del array
+        listaLibros.appendChild(li);
+    });
+}
 
 function searchBooks() {
     const searchInput = document.getElementById('searchInput');
