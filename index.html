@@ -210,6 +210,7 @@
     
     <div id="libros_unam" class="content libros" style="display:none;">
         <h2>Libros UNAM</h2>
+        <input type="text" id="searchInputUnam" placeholder="Buscar por tema" oninput="searchBooksUnam()">
         <div class="libro-Unam">
             <div class="map-container">
                 <div class="mapa">
@@ -232,7 +233,6 @@
             <div class="infoUnam">
                 <h3>Información del libro</h3>
                 <h2>(Autor, Fecha, Titulo, Editorial, Lugar)</h2>
-                <input type="text" id="searchInputUnam" placeholder="Buscar por tema" oninput="searchBooksUnam()">
                 <ol id="listaLibrosUNAM" class="content-text alternating-colors"></ol>
                 <button class="edit-btn" onclick="checkAndLoadContentForEdit('libros_unam')">Editar</button>
             </div>    
