@@ -30,7 +30,7 @@ function searchBooks() {
     const searchInput = document.getElementById('searchInput');
     const searchTerm = searchInput.value.toLowerCase();
     
-    fetch('Libros.csv')
+    fetch('LibrosUNAM.csv')
     .then(response => response.text())
     .then(data => {
         const books = data.split('\n').map(line => line.split(','));
@@ -42,6 +42,21 @@ function searchBooks() {
     });
 }
 
+function searchBooks2() {
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    fetch('Libros.csv')
+    .then(response => response.text())
+    .then(data => {
+        const books = data.split('\n').map(line => line.split(','));
+        const filteredBooks = books.filter(book => {
+            const bookInfo = book.join(' ').toLowerCase(); // Concatenar la información del libro en una sola cadena
+            return bookInfo.includes(searchTerm); // Verificar si la cadena contiene el término de búsqueda
+        });
+        displayBooks(filteredBooks, 'listaLibros');
+    });
+}
 
 loadBooks();
 
