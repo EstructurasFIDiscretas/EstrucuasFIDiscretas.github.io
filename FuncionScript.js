@@ -43,9 +43,8 @@ function searchBooks() {
 }
 
 
-function searchBooksUnam() {
-    const searchInputUnam = document.getElementById('searchInputUnam');
-    const searchTermUnam = searchInputUnam.value.toLowerCase();
+function searchBooksUnam(event) {
+    const searchTermUnam = event.target.value.toLowerCase();
     
     fetch('LibrosUNAM.csv')
     .then(response => response.text())
@@ -56,11 +55,9 @@ function searchBooksUnam() {
             return bookInfo.includes(searchTermUnam);
         });
         displayBooksUnam(filteredBooks, 'listaLibrosUNAM');
-    })
-    .catch(error => {
-        console.error('Error fetching UNAM books:', error);
     });
 }
+
 
 loadBooksUnam();
 loadBooks();
