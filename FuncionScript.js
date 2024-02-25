@@ -7,15 +7,21 @@ function loadBooks() {
     });
 }
 
-function loadBooksUnam() {
-    fetch('LibrosUNAM.csv')
-    .then(response => response.text())
-    .then(data => {
-        const books = data.split('\n').map(line => line.split(','));
-        displayBooks(books, 'listaLibrosUNAM');
-    });
-}
-
+    function loadBooksUnam() {
+        fetch('LibrosUNAM.csv')
+        .then(response => response.text())
+        .then(data => {
+            const books = data.split('\n').map(line => line.split(','));
+            const listaLibros = document.getElementById('listaLibrosUNAM');
+            listaLibros.innerHTML = '';
+            books.forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = `${book[0]} ${book[1]} ${book[2]} ${book[3]} ${book[4]}`;
+                listaLibros.appendChild(li);
+            });
+        });
+    }
+loadBooksUnam();
 function displayBooks(books, listId) {
     const listaLibros = document.getElementById(listId);
     listaLibros.innerHTML = '';
@@ -42,25 +48,21 @@ function searchBooks() {
     });
 }
 
-function searchBooksUnam() {
-    const searchInputUnam = document.getElementById('searchInputUnam');
-    const searchTermUnam = searchInputUnam.value.toLowerCase();
-    
-    fetch('LibrosUNAM.csv')
-    .then(response => response.text())
-    .then(data => {
-        const books = data.split('\n').map(line => line.split(','));
-        const filteredBooks = books.filter(book => {
-            const bookInfo = book.join(' ').toLowerCase();
-            return bookInfo.includes(searchTermUnam);
+    function searchBooksUnam() {
+        const input = document.getElementById('searchInputUnam').value.toLowerCase();
+        const libros = document.querySelectorAll('#listaLibrosUNAM li');
+        libros.forEach(libro => {
+            const text = libro.textContent.toLowerCase();
+            if (text.includes(input)) {
+                libro.style.display = 'block';
+            } else {
+                libro.style.display = 'none';
+            }
         });
-        displayBooksUnam(filteredBooks, 'listaLibrosUNAM');
-    });
-}
+    }
 
 loadBooks();
 
-loadBooksUnam();
 
 function loadInformation() {
     fetch('ContenidoInformacion.csv')
