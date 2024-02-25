@@ -14,11 +14,11 @@ function loadBooks() {
             const books = data.split('\n').map(line => line.split(','));
             const listaLibros = document.getElementById('listaLibrosUNAM');
             listaLibros.innerHTML = '';
-            books.forEach(book => {
+            for (let i = 0; i < 6; i++) {
                 const li = document.createElement('li');
-                li.textContent = `${book[0]} ${book[1]} ${book[2]} ${book[3]} ${book[4]}`;
+                li.textContent = `${books[i][0]} ${books[i][1]} ${books[i][2]} ${books[i][3]} ${books[i][4]}`;
                 listaLibros.appendChild(li);
-            });
+            }
         });
     }
 loadBooksUnam();
@@ -48,18 +48,19 @@ function searchBooks() {
     });
 }
 
-    function searchBooksUnam() {
-        const input = document.getElementById('searchInputUnam').value.toLowerCase();
-        const libros = document.querySelectorAll('#listaLibrosUNAM li');
-        libros.forEach(libro => {
-            const text = libro.textContent.toLowerCase();
-            if (text.includes(input)) {
-                libro.style.display = 'block';
-            } else {
-                libro.style.display = 'none';
-            }
-        });
-    }
+
+function searchBooksUnam() {
+    const input = document.getElementById('searchInputUnam').value.toLowerCase();
+    const libros = document.querySelectorAll('#listaLibrosUNAM li');
+    libros.forEach(libro => {
+        const text = libro.textContent.toLowerCase();
+        if (text.includes(input)) {
+            libro.style.display = 'block';
+        } else {
+            libro.style.display = 'none';
+        }
+    });
+}
 
 loadBooks();
 
